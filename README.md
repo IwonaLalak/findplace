@@ -15,4 +15,4 @@ React JS (CRA), Typescript, Google maps API, Prettier, styles/scss
 - [ ] create welcome & login view
 - [ ] create profile & score counting mechanism
 - [ ] create levels
-- [ ]\* save data in base (firebase?)
+- [ ] ADDITIONAL save data in base (firebase?)
