@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/google.maps": "^3.49.2",
     "prettier": "2.7.1"
   }
 }

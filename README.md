@@ -4,12 +4,15 @@ Simple web game based on Google Maps. User should guess where was the picture to
 
 ### tech stack
 
-React JS (CRA), Typescript, Google maps API, Prettier
+React JS (CRA), Typescript, Google maps API, Prettier, styles/scss
 
 ### roadmap
 
 - [x] init repo & configure it
-- [ ] integrate with Google Maps API, create view and collect click mechanism
+- [x] integrate with Google Maps API, create view and collect click mechanism (basics)
+- [ ] create sample guess list and checking mechanism
+- [ ] improve UX/UI :)
 - [ ] create welcome & login view
-- [ ] create profile & score list
+- [ ] create profile & score counting mechanism
 - [ ] create levels
+- [ ]\* save data in base (firebase?)
