@@ -1,15 +1,16 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from 'react';
+import { LatLngType } from '../../../models/LatLngType';
 
 interface Props {
-  latLng: { lat: number; lng: number };
+  latLng: LatLngType;
 }
 
 /** Displays interactive street view of searching place */
 const StreetViewComponent = ({ latLng }: Props): JSX.Element => {
-  const ref =
-    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLDivElement>;
+  const ref = useRef<HTMLDivElement>() as React.MutableRefObject<HTMLDivElement>;
 
-  const [map, setMap] = useState<google.maps.Map>();
+  const [map, setMap] = useState<google.maps.Map | null>();
+  const [view, setView] = useState<google.maps.StreetViewPanorama | null>();
 
   /** init map */
   useEffect(() => {
@@ -35,13 +36,27 @@ const StreetViewComponent = ({ latLng }: Props): JSX.Element => {
         disableDefaultUI: true,
       });
 
+      setView(view);
+
       map.setStreetView(view);
     }
+    return () => {
+      if (!map) {
+        setView(null);
+      }
+    };
   }, [map]);
+
+  /** on change place to guess */
+  useEffect(() => {
+    if (view && latLng) {
+      view.setPosition(latLng);
+    }
+  }, [latLng]);
 
   return (
     <>
-      <div ref={ref} id="streetview" style={{ height: "500px" }} />
+      <div ref={ref} id="streetview" style={{ height: '500px' }} />
     </>
   );
 };
