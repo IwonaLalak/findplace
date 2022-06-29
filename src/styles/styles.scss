@@ -1,6 +1,17 @@
-@import "node_modules/normalize-scss/sass/normalize/_import-now.scss";
-@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;700&display=swap");
+@import 'node_modules/normalize-scss/sass/normalize/_import-now.scss';
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;700&display=swap');
 
 * {
-  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+
+@import './variables.scss';
+
+// shared
+
+@import './typography.scss';
+@import './layout.scss';
+
+// stages
+
+@import './stages/gameStage.scss';

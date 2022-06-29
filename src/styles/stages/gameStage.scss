@@ -1,0 +1,18 @@
+#gamestage {
+  .row {
+    height: 50vh;
+
+    &__streetview {
+    }
+    &__actions {
+    }
+  }
+
+  .col {
+    width: 50vw;
+    &__map {
+    }
+    &__actions {
+    }
+  }
+}

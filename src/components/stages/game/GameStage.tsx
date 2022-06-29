@@ -56,21 +56,27 @@ const GameStage = (): JSX.Element => {
     return <h4>loading....</h4>;
   };
 
-  return (
-    <>
-      <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY as string} language="EN" render={render}>
-        <StreetViewComponent latLng={destinationPlace.latLng} />
-        <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} />
-      </Wrapper>
-      {!!click && (
-        <div>
-          <p>your choice: {JSON.stringify(userChoice)}</p>
-          <button onClick={handleCheck}>check</button>
-          <button onClick={beginGame}>next one</button>
-        </div>
-      )}
-    </>
-  );
+  // <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY as string} language="EN" render={render}>
+  //   <div className="row row__streetview">
+  //     <StreetViewComponent latLng={destinationPlace.latLng} />
+  //   </div>
+  //   <div className="row row__actions">
+  //     <div className="col col__map">
+  //       <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} />
+  //     </div>
+  //     <div className="col col__actions">
+  //       {!!click && (
+  //         <div>
+  //           <p>your choice: {JSON.stringify(userChoice)}</p>
+  //           <button onClick={handleCheck}>check</button>
+  //           <button onClick={beginGame}>next one</button>
+  //         </div>
+  //       )}
+  //     </div>
+  //   </div>
+  // </Wrapper>
+
+  return <div id="gamestage">game stage</div>;
 };
 
 export default GameStage;

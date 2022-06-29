@@ -12,7 +12,7 @@ React JS (CRA), Typescript, Google maps API, Prettier, styles/scss
 - [x] integrate with Google Maps API, create view and collect click mechanism (basics)
 - [x] create sample guess list and checking mechanism
 - [x] create levels
-- [ ] improve UX/UI :)
+- [x] improve UX/UI :)
 - [ ] create welcome & login view
 - [ ] create profile & score counting mechanism
 - [ ] mobile UX/UI
