@@ -10,11 +10,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div id="appLayout">
       <Header />
-      <section>
-        {children} <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1>{' '}
-        <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1>{' '}
-        <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1> <h1>aaa</h1>
-      </section>
+      <section>{children}</section>
       <Footer />
     </div>
   );

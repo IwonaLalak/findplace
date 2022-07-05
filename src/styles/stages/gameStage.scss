@@ -1,18 +1,10 @@
 #gamestage {
-  .row {
-    height: 50vh;
-
-    &__streetview {
-    }
-    &__actions {
-    }
+  .preview {
   }
-
-  .col {
-    width: 50vw;
+  .actions {
     &__map {
     }
-    &__actions {
+    &__buttons {
     }
   }
 }

@@ -7,10 +7,10 @@ const Footer = (): JSX.Element => {
     <footer>
       <div className="createdby">Created by Iwona Lalak &copy; 2022</div>
       <div className="links">
-        <a className="github" href="https://github.com/IwonaLalak" target="_blank">
+        <a href="https://github.com/IwonaLalak" target="_blank">
           <IconGithub /> my github
         </a>
-        <a className="github" href="https://iwonalalak.pl/" target="_blank">
+        <a href="https://iwonalalak.pl/" target="_blank">
           <IconWeb /> my homepage
         </a>
       </div>

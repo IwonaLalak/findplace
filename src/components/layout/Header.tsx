@@ -6,7 +6,7 @@ import IconScoreboard from '../icons/Scoreboard';
 const Header = (): JSX.Element => {
   return (
     <header>
-      <div className="container container__logonav">
+      <div className="container container--logonav">
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
@@ -16,7 +16,7 @@ const Header = (): JSX.Element => {
           <a href="">ABOUT</a>
         </nav>
       </div>
-      <div className="container container__actions">
+      <div className="container container--actions">
         <a href="">
           {/* todo dropdown tooltip with title of action: see scoreboard, go to account page */}
           <IconScoreboard />
