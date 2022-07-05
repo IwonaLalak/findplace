@@ -77,7 +77,7 @@ const MapComponent = ({ center, zoom, destinationPlace, onSetMarker }: Props): J
     }
   };
 
-  return <div ref={ref} id="map" style={{ height: '500px' }} />;
+  return <div ref={ref} id="map" style={{ height: '100%' }} />;
 };
 
 export default MapComponent;

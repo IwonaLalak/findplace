@@ -1,0 +1,108 @@
+.button {
+  $root: &;
+
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  color: $text-color;
+  font-weight: bold;
+  line-height: 1;
+  transition: background ease 0.2s;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--small {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  &--medium {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  &--large {
+    font-size: 36px;
+    padding: 15px 30px;
+  }
+
+  &--primary {
+    background: transparent;
+    &:hover:not(:disabled) {
+      background: $primary-color-darker;
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &--secondary {
+    background: $secondary-color;
+    &:hover:not(:disabled) {
+      background: $secondary-color-darker;
+    }
+    &:disabled {
+      color: $secondary-color-darker;
+      opacity: 0.9;
+    }
+  }
+  &--action {
+    background: $tertiary-color;
+    &:hover:not(:disabled) {
+      background: $tertiary-color-darker;
+    }
+    &:disabled {
+      color: $tertiary-color-darker;
+      opacity: 0.9;
+    }
+  }
+
+  &--withIcon {
+    //  padding: 0;
+    overflow: hidden;
+    & > div {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    &:hover:not(:disabled) {
+      svg {
+        animation: iconmove 0.3s;
+      }
+    }
+  }
+
+  &__label {
+  }
+
+  &__icon {
+    background: red;
+    #{$root}--small & {
+      width: calc(16px * 1.3);
+    }
+    #{$root}--medium & {
+      width: calc(20px * 1.3);
+    }
+    #{$root}--large & {
+      width: calc(36px * 1.3);
+    }
+
+    svg {
+      right: 0;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+
+      @keyframes iconmove {
+        from {
+          top: 50px;
+        }
+        to {
+          top: 0;
+        }
+      }
+    }
+  }
+}

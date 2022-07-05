@@ -1,4 +1,4 @@
-// colors
+// *** COLORS ***
 
 // backgrounds
 $primary-color: #0d062e; // 07031a // 0a043c
@@ -7,7 +7,19 @@ $primary-color-darker: darken($primary-color, 5%);
 
 // actions, highlight
 $secondary-color: #4f8a8b; // 4f8a8b //03506f
-$tertiary-color: #fbd46d; // f4f6ff //ffe3d8
+$secondary-color-ligher: lighten($secondary-color, 10%);
+$secondary-color-darker: darken($secondary-color, 10%);
+
+$tertiary-color: #ffb938; // f4f6ff //ffe3d8
+$tertiary-color-ligher: lighten($tertiary-color, 10%);
+$tertiary-color-darker: darken($tertiary-color, 10%);
 
 // text
 $text-color: #f4f6ff; // fbd46d // bbbbbb
+$text-color-darker: #dddd; // fbd46d // bbbbbb
+
+// *** SIZES ***
+
+// header & footer size
+$header-height: 64px;
+$footer-height: 36px;

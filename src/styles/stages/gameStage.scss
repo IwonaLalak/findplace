@@ -1,10 +1,21 @@
 #gamestage {
   .preview {
+    height: 50vh;
   }
+
   .actions {
+    width: 50vw;
+    height: calc(50vh - $header-height - $footer-height);
+    display: flex;
+    width: 100%;
+
     &__map {
+      height: 100%;
+      width: 50%;
     }
+
     &__buttons {
+      width: 50%;
     }
   }
 }

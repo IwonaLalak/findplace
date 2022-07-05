@@ -56,7 +56,7 @@ const StreetViewComponent = ({ latLng }: Props): JSX.Element => {
 
   return (
     <>
-      <div ref={ref} id="streetview" style={{ height: '500px' }} />
+      <div ref={ref} id="streetview" style={{ height: '100%' }} />
     </>
   );
 };
