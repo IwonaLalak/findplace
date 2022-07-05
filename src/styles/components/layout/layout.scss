@@ -1,0 +1,13 @@
+#appLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: $primary-color-ligher;
+  color: $text-color;
+
+  section {
+    flex-grow: 1;
+    padding: 15px;
+  }
+}

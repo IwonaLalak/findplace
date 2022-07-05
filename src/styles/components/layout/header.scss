@@ -1,11 +1,4 @@
 #appLayout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  background: $primary-color-ligher;
-  color: $text-color;
-
   header {
     //  position: sticky;
     //  top: 0;
@@ -82,59 +75,6 @@
             svg {
               fill: $tertiary-color;
             }
-          }
-        }
-      }
-    }
-  }
-
-  section {
-    flex-grow: 1;
-    padding: 15px;
-  }
-
-  footer {
-    background: $primary-color-darker;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-
-    .createdby {
-      font-size: 14px;
-      margin-right: 15px;
-      padding-right: 15px;
-      border-right: 1px solid rgba(255, 255, 255, 0.15);
-      text-align: center;
-    }
-    .links {
-      display: flex;
-      flex-wrap: nowrap;
-      a {
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        color: $secondary-color;
-
-        &:not(:first-of-type) {
-          margin-left: 10px;
-        }
-
-        svg {
-          font-size: 18px;
-          height: 18px;
-          width: 18px;
-          fill: $secondary-color;
-          margin-right: 5px;
-          transition: fill ease 0.2s;
-        }
-
-        &:hover {
-          color: $text-color;
-          transition: color ease 0.2s;
-
-          & svg {
-            fill: $text-color;
           }
         }
       }

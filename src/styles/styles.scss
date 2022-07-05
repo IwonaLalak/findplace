@@ -10,7 +10,12 @@
 // shared
 
 @import './typography.scss';
-@import './layout.scss';
+
+// layout
+
+@import './components/layout/layout.scss';
+@import './components/layout/header.scss';
+@import './components/layout/footer.scss';
 
 // stages
 
