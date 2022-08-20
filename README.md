@@ -23,5 +23,6 @@ React JS (CRA), Typescript, Google maps API, Prettier, styles/scss
 
 - clone repo
 - set environment to node version v16.15.1 and npm 8.11.0
-- run npm install
-- run npm start & enjoy
+- create file `.env` and type `REACT_APP_GOOGLE_MAP_API_KEY=your_googlemaps_key`, where `your_googlemaps_key` is secret api key [link](https://developers.google.com/maps/documentation/embed/get-api-key)
+- run `npm install`
+- run `npm start` & enjoy
