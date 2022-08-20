@@ -6,10 +6,7 @@ import { famousPlaces } from '../../../data/famousPlaces';
 import PlaceModel from '../../../models/PlaceModel';
 import { LatLngType } from '../../../models/LatLngType';
 import ScoreRecordModel from '../../../models/ScoreRecordModel';
-import Button, { ButtonSizes, ButtonVariants } from '../../buttons/Button';
 import WrapperMapStatus from './WrapperMapStatus';
-import ArrowLeft from '../../icons/ArrowLeft';
-import ArrowRight from '../../icons/ArrowRight';
 
 /** Merges all main game-parts */
 const GameStage = (): JSX.Element => {
@@ -62,39 +59,6 @@ const GameStage = (): JSX.Element => {
             {!!click && (
               <div>
                 <p>your choice: {JSON.stringify(userChoice)}</p>
-                <p>
-                  <Button variant={ButtonVariants.PRIMARY} size={ButtonSizes.SMALL} onClick={handleCheck} icon={<ArrowLeft />}>
-                    check
-                  </Button>
-                  <Button variant={ButtonVariants.SECONDARY} size={ButtonSizes.SMALL} onClick={beginGame} icon={<ArrowLeft />}>
-                    next one
-                  </Button>
-                  <Button variant={ButtonVariants.ACTION} size={ButtonSizes.SMALL} onClick={handleCheck} icon={<ArrowLeft />}>
-                    check
-                  </Button>
-                </p>
-                <p>
-                  <Button variant={ButtonVariants.PRIMARY} onClick={handleCheck} icon={<ArrowLeft />}>
-                    check
-                  </Button>
-                  <Button variant={ButtonVariants.SECONDARY} onClick={beginGame} icon={<ArrowLeft />}>
-                    next one
-                  </Button>
-                  <Button variant={ButtonVariants.ACTION} onClick={handleCheck} icon={<ArrowLeft />}>
-                    check
-                  </Button>
-                </p>
-                <p>
-                  <Button variant={ButtonVariants.PRIMARY} size={ButtonSizes.LARGE} onClick={handleCheck} icon={<ArrowRight />} disabled>
-                    check
-                  </Button>
-                  <Button variant={ButtonVariants.SECONDARY} size={ButtonSizes.LARGE} onClick={beginGame} icon={<ArrowRight />} disabled>
-                    next one
-                  </Button>
-                  <Button variant={ButtonVariants.ACTION} size={ButtonSizes.LARGE} onClick={handleCheck} icon={<ArrowRight />} disabled>
-                    check
-                  </Button>
-                </p>
               </div>
             )}
           </div>

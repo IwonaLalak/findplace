@@ -18,3 +18,10 @@ React JS (CRA), Typescript, Google maps API, Prettier, styles/scss
 - [ ] mobile UX/UI
 - [ ] expand current list and levels
 - [ ] ADDITIONAL save data in base (firebase?)
+
+### if you would like to run project
+
+- clone repo
+- set environment to node version v16.15.1 and npm 8.11.0
+- run npm install
+- run npm start & enjoy

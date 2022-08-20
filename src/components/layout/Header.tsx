@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import IconAccount from '../icons/Account';
 import IconScoreboard from '../icons/Scoreboard';
@@ -11,19 +12,20 @@ const Header = (): JSX.Element => {
           <img src={logo} alt="logo" />
         </div>
         <nav>
-          <a href="">HOME</a>
-          <a href="">LEVELS</a>
-          <a href="">ABOUT</a>
+          <Link to="/">HOME</Link>
+          <Link to="/levels">LEVELS</Link>
+          <Link to="/about">ABOUT</Link>
+          <Link to="/test">TEST UIUX COMPONENTS</Link>
         </nav>
       </div>
       <div className="container container--actions">
-        <a href="">
+        <Link to="/scoreboard">
           {/* todo dropdown tooltip with title of action: see scoreboard, go to account page */}
           <IconScoreboard />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="/account">
           <IconAccount />
-        </a>
+        </Link>
       </div>
     </header>
   );

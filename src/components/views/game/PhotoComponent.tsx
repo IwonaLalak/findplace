@@ -12,3 +12,4 @@ const PhotoComponent = ({ url }: Props): JSX.Element => {
 };
 
 export default PhotoComponent;
+

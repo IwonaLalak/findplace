@@ -20,7 +20,7 @@ interface ButtonProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps): JSX.Element => {
   const { children, icon, variant = ButtonVariants.PRIMARY, size = ButtonSizes.MEDIUM, disabled, onClick } = props;
 
   const renderWithIcon = (): ReactElement => (
