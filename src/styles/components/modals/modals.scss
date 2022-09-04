@@ -1,0 +1,44 @@
+.modal {
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: ' ';
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 500px;
+    max-height: 300px;
+
+    background: $primary-color;
+    border: 3px solid $secondary-color;
+    border-radius: 10px;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 20px 10px 10px 20px;
+
+    h3 {
+      margin: 0;
+    }
+
+    button {
+      color: $secondary-color;
+      height: calc(24px + 10px + 10px); // svg height + paddings top & bottom
+    }
+  }
+  &__content {
+    border-top: 3px solid $primary-color-darker;
+    padding: 10px 20px 20px 20px;
+  }
+}

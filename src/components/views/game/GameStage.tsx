@@ -7,11 +7,9 @@ import PlaceModel from '../../../models/PlaceModel';
 import { LatLngType } from '../../../models/LatLngType';
 import ScoreRecordModel from '../../../models/ScoreRecordModel';
 import WrapperMapStatus from './WrapperMapStatus';
-import Spinner from '../../icons/Spinner';
 import Button, { ButtonSizes, ButtonVariants } from '../../buttons/Button';
 import CircleSuccess from '../../icons/CircleSuccess';
 import ArrowRight from '../../icons/ArrowRight';
-import pick from '../../../utils/pick';
 import BeginBox from './BeginBox';
 import ResultBox from './ResultBox';
 
@@ -62,12 +60,10 @@ const GameStage = (): JSX.Element => {
   return (
     <div id="gamestage">
       <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY as string} language="EN" render={status => <WrapperMapStatus status={status} />}>
-        <div className="preview">
-          <StreetViewComponent latLng={destinationPlace.latLng} />
-        </div>
+        <div className="preview">{/* <StreetViewComponent latLng={destinationPlace.latLng} /> */}</div>
         <div className="actions">
           <div className="actions__map">
-            <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} />
+            {/* <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} /> */}
           </div>
           <div className="actions__controls">
             {!result && (

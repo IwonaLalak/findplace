@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button, { ButtonSizes, ButtonVariants } from '../../buttons/Button';
 import ArrowRight from '../../icons/ArrowRight';
+import Modal from './../../modals/Modal';
 
 const Test = (): JSX.Element => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
   const handleClick = () => console.log('click');
 
   return (
@@ -59,6 +62,25 @@ const Test = (): JSX.Element => {
           </Button>
         </p>
       </div>
+
+      <div style={{ marginTop: '25px' }}>
+        <p>modals</p>
+        <hr />
+        <p>
+          <Button variant={ButtonVariants.ACTION} size={ButtonSizes.MEDIUM} onClick={() => setOpenModal(true)}>
+            Open modal
+          </Button>
+        </p>
+      </div>
+
+      <Modal isOpen={openModal} handleClose={() => setOpenModal(false)} title="What is Lorem Ipsum?">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+          the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </Modal>
     </div>
   );
 };
