@@ -7,13 +7,21 @@ import PlaceModel from '../../../models/PlaceModel';
 import { LatLngType } from '../../../models/LatLngType';
 import ScoreRecordModel from '../../../models/ScoreRecordModel';
 import WrapperMapStatus from './WrapperMapStatus';
+import Spinner from '../../icons/Spinner';
+import Button, { ButtonSizes, ButtonVariants } from '../../buttons/Button';
+import CircleSuccess from '../../icons/CircleSuccess';
+import ArrowRight from '../../icons/ArrowRight';
+import pick from '../../../utils/pick';
+import BeginBox from './BeginBox';
+import ResultBox from './ResultBox';
 
 /** Merges all main game-parts */
 const GameStage = (): JSX.Element => {
   const [click, setClick] = useState<boolean>(false);
+  const [confirm, setConfirm] = useState<boolean>(false);
   const [destinationPlace, setDestinationPlace] = useState<PlaceModel>(PlaceModel.create());
   const [userChoice, setUserChoice] = useState<LatLngType>({ lat: 0, lng: 0 });
-  const [confirm, setConfirm] = useState(false);
+  const [result, setResult] = useState<ScoreRecordModel | null>(null);
 
   useEffect(() => {
     beginGame();
@@ -21,12 +29,10 @@ const GameStage = (): JSX.Element => {
 
   /** sets new game - new place to guess */
   const beginGame = () => {
-    // clear previous choices
-    setClick(false);
-    setConfirm(false);
-    setUserChoice({ lat: 0, lng: 0 });
+    handleClear();
 
     // get random place to guess
+    // todo create mechanism to avoid getting the same place twice
     const indx = Math.floor(Math.random() * famousPlaces.list.length);
     setDestinationPlace(famousPlaces.list[indx]);
   };
@@ -42,7 +48,15 @@ const GameStage = (): JSX.Element => {
   const handleCheck = () => {
     setConfirm(true);
     console.log(ScoreRecordModel.returnScore(destinationPlace.latLng, userChoice));
-    // todo mechanism for checking user choice
+    setResult(ScoreRecordModel.returnScore(destinationPlace.latLng, userChoice));
+  };
+
+  /** clears user choice */
+  const handleClear = () => {
+    setClick(false);
+    setConfirm(false);
+    setUserChoice({ lat: 0, lng: 0 });
+    setResult(null);
   };
 
   return (
@@ -55,11 +69,31 @@ const GameStage = (): JSX.Element => {
           <div className="actions__map">
             <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} />
           </div>
-          <div className="action__buttons">
-            {!!click && (
-              <div>
-                <p>your choice: {JSON.stringify(userChoice)}</p>
-              </div>
+          <div className="actions__controls">
+            {!result && (
+              <>
+                <BeginBox tip="sample tip" />
+
+                <div className="buttonbox">
+                  <Button variant={ButtonVariants.PRIMARY} size={ButtonSizes.LARGE} onClick={handleClear} disabled={!click}>
+                    Clear choice
+                  </Button>
+                  <Button variant={ButtonVariants.ACTION} size={ButtonSizes.LARGE} onClick={handleCheck} icon={<CircleSuccess />} disabled={!click}>
+                    Check out
+                  </Button>
+                </div>
+              </>
+            )}
+            {result && (
+              <>
+                <ResultBox result={result} />
+
+                <div className="buttonbox">
+                  <Button variant={ButtonVariants.ACTION} size={ButtonSizes.LARGE} onClick={beginGame} icon={<ArrowRight />}>
+                    Next one
+                  </Button>
+                </div>
+              </>
             )}
           </div>
         </div>

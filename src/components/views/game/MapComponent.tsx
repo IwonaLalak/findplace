@@ -9,7 +9,7 @@ interface Props {
   onSetMarker: (latLng: LatLngType) => void;
 }
 
-/** Holds clickable map for posting marker */
+/** hold clickable map for posting marker */
 const MapComponent = ({ center, zoom, destinationPlace, onSetMarker }: Props): JSX.Element => {
   const ref = useRef<HTMLDivElement>() as React.MutableRefObject<HTMLDivElement>;
 
@@ -17,7 +17,7 @@ const MapComponent = ({ center, zoom, destinationPlace, onSetMarker }: Props): J
   const [marker, setMarker] = useState<google.maps.Marker>();
   const [destinationMarker, setDestinationMarker] = useState<google.maps.Marker>();
 
-  /** sets maps */
+  /** set maps */
   useEffect(() => {
     if (ref.current && !map) {
       setMap(
@@ -30,14 +30,14 @@ const MapComponent = ({ center, zoom, destinationPlace, onSetMarker }: Props): J
     }
   }, [ref, map]);
 
-  /** fires onClick listener */
+  /** fire onClick listener */
   useEffect(() => {
     if (map) {
       map.addListener('click', handleClickOnMap);
     }
   }, [map]);
 
-  /** fires & remove on unmount markers (first - user choice, second - place to guess) */
+  /** fire & remove on unmount markers (first - user choice, second - place to guess) */
   useEffect(() => {
     if (!marker && !destinationMarker) {
       setMarker(new google.maps.Marker());
@@ -62,6 +62,14 @@ const MapComponent = ({ center, zoom, destinationPlace, onSetMarker }: Props): J
       destinationMarker?.setMap(null);
     }
   }, [destinationPlace]);
+
+  /** clear user's choice */
+  useEffect(() => {
+    if (marker && center?.lat === 0 && center?.lng === 0) {
+      marker?.setMap(null);
+      destinationMarker?.setMap(null);
+    }
+  }, [center]);
 
   /** collects and sends info about user click */
   const handleClickOnMap = (e: google.maps.MapMouseEvent) => {

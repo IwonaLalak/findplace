@@ -16,11 +16,11 @@
   }
 
   &--small {
-    font-size: 16px;
+    font-size: 18px;
     padding: 5px 10px;
   }
   &--medium {
-    font-size: 20px;
+    font-size: 24px;
     padding: 10px 20px;
   }
   &--large {
@@ -53,7 +53,7 @@
       background: $tertiary-color-darker;
     }
     &:disabled {
-      color: $tertiary-color-darker;
+      color: $tertiary-color-darkest;
       opacity: 0.9;
     }
   }
@@ -72,9 +72,6 @@
         animation: iconmove 0.3s;
       }
     }
-  }
-
-  &__label {
   }
 
   &__icon {
