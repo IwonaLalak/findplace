@@ -60,15 +60,17 @@ const GameStage = (): JSX.Element => {
   return (
     <div id="gamestage">
       <Wrapper apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY as string} language="EN" render={status => <WrapperMapStatus status={status} />}>
-        <div className="preview">{/* <StreetViewComponent latLng={destinationPlace.latLng} /> */}</div>
+        <div className="preview">
+          <StreetViewComponent latLng={destinationPlace.latLng} />
+        </div>
         <div className="actions">
           <div className="actions__map">
-            {/* <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} /> */}
+            <MapComponent center={userChoice} zoom={1} onSetMarker={handleSetMarker} destinationPlace={confirm ? destinationPlace : undefined} />
           </div>
           <div className="actions__controls">
             {!result && (
               <>
-                <BeginBox tip="sample tip" />
+                <BeginBox tip={destinationPlace?.tip || null} />
 
                 <div className="buttonbox">
                   <Button variant={ButtonVariants.PRIMARY} size={ButtonSizes.LARGE} onClick={handleClear} disabled={!click}>
@@ -82,7 +84,7 @@ const GameStage = (): JSX.Element => {
             )}
             {result && (
               <>
-                <ResultBox result={result} />
+                <ResultBox result={result} destination={destinationPlace} />
 
                 <div className="buttonbox">
                   <Button variant={ButtonVariants.ACTION} size={ButtonSizes.LARGE} onClick={beginGame} icon={<ArrowRight />}>

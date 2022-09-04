@@ -3,7 +3,7 @@ import Button, { ButtonSizes, ButtonVariants } from '../../buttons/Button';
 import Modal from './../../modals/Modal';
 
 interface Props {
-  tip?: string;
+  tip?: string | null;
 }
 
 /** Shows before user clicks and checks out his/her type  */
@@ -51,7 +51,7 @@ const BeginBox = ({ tip }: Props) => {
               </Button>
             </div>
           )}
-          {showTip && <h6>sample tip text</h6>}
+          {showTip && <h6>{tip}</h6>}
         </>
       </Modal>
     </>

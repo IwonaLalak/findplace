@@ -11,16 +11,17 @@ button {
 
 // shared
 
-@import './typography.scss';
-@import './components/buttons/buttons.scss';
-@import './components/modals/modals.scss';
-@import './components/icons/spinner.scss';
+@import './components/typography.scss';
+@import './components/scrollbar.scss';
+@import './components/buttons.scss';
+@import './components/modals.scss';
+@import './components/spinner.scss';
 
 // layout
 
-@import './components/layout/layout.scss';
-@import './components/layout/header.scss';
-@import './components/layout/footer.scss';
+@import './layout/layout.scss';
+@import './layout/header.scss';
+@import './layout/footer.scss';
 
 // views
 

@@ -1,5 +1,7 @@
 .modal {
   &__container {
+    z-index: 9999;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -14,13 +16,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 100%;
-    max-width: 500px;
-    max-height: 300px;
-
     background: $primary-color;
     border: 3px solid $secondary-color;
-    border-radius: 10px;
+    border-radius: 8px;
+
+    width: 100%;
+
+    &--small {
+      max-width: 400px;
+      //max-height: 200px;
+    }
+    &--medium {
+      max-width: 600px;
+      //max-height: 400px;
+    }
+    &--large {
+      max-width: 1000px;
+      //max-height: 600px;
+    }
   }
   &__title {
     display: flex;
@@ -39,6 +52,28 @@
   }
   &__content {
     border-top: 3px solid $primary-color-darker;
-    padding: 10px 20px 20px 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .modal__box--small & {
+      //max-width: 400px;
+      max-height: 200px;
+    }
+    .modal__box--medium & {
+      //max-width: 600px;
+      max-height: 400px;
+    }
+    .modal__box--large & {
+      //max-width: 1000px;
+      max-height: 600px;
+    }
+
+    & > div {
+      padding: 10px 20px 20px 20px;
+    }
+
+    & img {
+      max-width: 100%;
+    }
   }
 }
